@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinic Patient Automation System</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f7f9;
+}
+header {
+  background: #0b5ed7;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+h1, h2 {
+  margin-bottom: 20px;
+}
+.problem li {
+  margin-bottom: 10px;
+}
+.flow {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.8;
+}
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #0b5ed7;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+button:hover {
+  background: #084298;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e9ecef;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Automated Patient Lead & Booking System</h1>
+<p>Never lose a patient inquiry again. Automate qualification, follow-ups & booking.</p>
+</header>
+
+<section>
+<h2>Problems Clinics Face</h2>
+<ul class="problem">
+<li>❌ Slow WhatsApp replies</li>
+<li>❌ Missed patient inquiries</li>
+<li>❌ Manual data entry</li>
+<li>❌ No structured follow-up</li>
+</ul>
+</section>
+
+<section>
+<h2>How Our Automation Works</h2>
+<div class="flow">
+Ads / Website / Instagram <br>
+↓ <br>
+Patient Form Submission <br>
+↓ <br>
+n8n Automation System <br>
+↓ <br>
+Lead Qualification (Hot / Warm) <br>
+↓ <br>
+Auto WhatsApp / Email Response <br>
+↓ <br>
+Consultation Booking <br>
+↓ <br>
+Lead Saved in CRM
+</div>
+</section>
+
+<section>
+<h2>Get Free Automation Audit</h2>
+<div class="form-box">
+<form action="https://elevateaisystems6.app.n8n.cloud/webhook-test/clinic-lead" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="text" name="phone" placeholder="Phone Number" required>
+<select name="treatment" required>
+<option value="">Select Treatment Interest</option>
+<option value="Dental">Dental</option>
+<option value="Hair Transplant">Hair Transplant</option>
+<option value="Skin Treatment">Skin Treatment</option>
+<option value="IVF">IVF</option>
+</select>
+<input type="text" name="budget" placeholder="Approx Budget (Optional)">
+<input type="date" name="preferred_date">
+<textarea name="message" placeholder="Additional Message"></textarea>
+<button type="submit">Request Free Audit</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Clinic Automation System | Built for Growth-Focused Clinics</p>
+</footer>
+
+</body>
+</html>
