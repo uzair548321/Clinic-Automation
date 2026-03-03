@@ -16,9 +16,6 @@ input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; borde
 button { background: #0b5ed7; color: white; padding: 14px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; }
 button:hover { background: #084298; }
 footer { text-align: center; padding: 20px; background: #e9ecef; }
-.note { margin-top: 10px; font-size: 14px; }
-.success { color: #198754; }
-.error { color: #dc3545; }
 </style>
 </head>
 
@@ -55,7 +52,8 @@ footer { text-align: center; padding: 20px; background: #e9ecef; }
 <section>
   <h2>Get Free Automation Audit</h2>
   <div class="form-box">
-    <form id="leadForm">
+    <!-- ✅ PURE FORM SUBMIT (no fetch) -->
+    <form action="https://elevateaisystems6.app.n8n.cloud/webhook/clinic-lead" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="text" name="phone" placeholder="Phone Number" required>
       <select name="treatment" required>
@@ -68,9 +66,7 @@ footer { text-align: center; padding: 20px; background: #e9ecef; }
       <input type="text" name="budget" placeholder="Approx Budget (Optional)">
       <input type="date" name="preferred_date">
       <textarea name="message" placeholder="Additional Message"></textarea>
-      <button type="submit" id="submitBtn">Request Free Audit</button>
-
-      <div class="note" id="status"></div>
+      <button type="submit">Request Free Audit</button>
     </form>
   </div>
 </section>
@@ -78,40 +74,6 @@ footer { text-align: center; padding: 20px; background: #e9ecef; }
 <footer>
   <p>© 2026 Clinic Automation System | Built for Growth-Focused Clinics</p>
 </footer>
-
-<script>
-<form action="https://elevateaisystems6.app.n8n.cloud/webhook/clinic-lead" method="POST">;
-
-const form = document.getElementById("leadForm");
-const statusEl = document.getElementById("status");
-const btn = document.getElementById("submitBtn");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  statusEl.textContent = "";
-  btn.disabled = true;
-  btn.textContent = "Submitting...";
-
-  const formData = new FormData(form);
-
-  try {
-    const res = await fetch(WEBHOOK_URL, {
-      method: "POST",
-      body: formData
-    });
-
-    if (!res.ok) throw new Error("Request failed");
-
-    // Success redirect (make thankyou.html in repo)
-    window.location.href = "./thankyou.html";
-  } catch (err) {
-    statusEl.className = "note error";
-    statusEl.textContent = "❌ Something went wrong. Please try again.";
-    btn.disabled = false;
-    btn.textContent = "Request Free Audit";
-  }
-});
-</script>
 
 </body>
 </html>
